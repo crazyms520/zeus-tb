@@ -63,6 +63,12 @@ $(function() {
 		</div>`
 		return templet;
 	}
+
+	function findDuplicates(arr) {
+		return arr.filter(function(currentValue, currentIndex){
+			return arr.indexOf(currentValue) !== currentIndex;
+		})
+	 }
 	
 	$('.tb_items').slick({
 		arrows: false,
@@ -70,7 +76,7 @@ $(function() {
 		swipe: false,
 		touchMove: false,
 		infinite: false,
-		adaptiveHeight: true,
+		// adaptiveHeight: true,
 	});
 	
 	$('#tb-1').click(function(){
@@ -91,9 +97,13 @@ $(function() {
 
 	$('#tb-q3').find('li').click(function() {
 		products.push($(this).attr('data-productId'));
-		results = [...new Set(products.sort())];
+
+		let results = [...new Set(findDuplicates(products))];
+		if(results.length === 0) {
+			results = [...new Set(products.sort())];
+		}
 		
-		results.map(function(item, idx, arr){
+		results.map(function(item){
 			let templet = resultTemplet(productInfo[item])
 			$('.tb_result_content').append(templet);
 		})
@@ -102,8 +112,9 @@ $(function() {
 			$('.tb_box').addClass('longW');	
 			$('.tb_result_content').addClass('p_3');
 		}
-		$('header').css({'display': 'flex'});
+		
 		$('.tb_items').slick('slickGoTo', 4);	
+		
 	})
 
 	$('#get, #share').click(function(){
