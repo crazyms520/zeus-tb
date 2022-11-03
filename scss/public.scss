@@ -280,7 +280,13 @@ header {
 								.tb_result_item {
 									flex-basis: calc(100% / 3);
 									.tb_product {
-										
+
+										.tb_picture {
+											@include range-width(769px, 1025px) {
+												align-self: center;
+											}
+										}
+
 										.tb_tips {
 											.tb_tip {
 												.tb_tip_title {
@@ -290,6 +296,10 @@ header {
 													letter-spacing: 1.14px;
 													color: #4a4a4a;
 													background-color: #eee;
+
+													@include range-width(451px, 769px) {
+														padding: .5rem 0 .5rem 1.5rem;
+													}
 
 													@include range-width(0, 451px) {
 														font-size: 14px;
@@ -304,6 +314,11 @@ header {
 													letter-spacing: normal;
 													color: #4a4a4a;
 													text-align: left;
+
+													@include range-width(451px, 769px) {
+														margin: 1.5rem 0;
+														padding: 0 1.5rem;	
+													}
 
 													@include range-width(0, 451px) {
 														font-size: 13px;
@@ -327,15 +342,25 @@ header {
 												}
 
 												.tb_recommend_product {
+
+													@include range-width(769px, 1025px) {
+														flex-direction: column;
+														// padding: 0 .5rem;
+													}
+
 													.tb_picture {
 														picture {
 															img {
-																max-height: 120px;
+																height: 120px;
 															}
 														}
 													}
 													
 													.tb_tips {
+
+														@include range-width(769px, 1025px) {
+															padding-left: 0;
+														}
 			
 														p {
 															margin: .5rem 0 .5rem 0;
@@ -350,7 +375,7 @@ header {
 															.tb_span_web_br {
 																display: block;
 
-																@include range-width(0, 451px) {
+																@include range-width(0, 769px) {
 																	display: inline-block;
 																}
 															}
@@ -362,6 +387,10 @@ header {
 															letter-spacing: 1px;
 															color: #4a4a4a;
 															text-align: left;
+
+															@include range-width(769px, 1025px) {
+																text-align: center;
+															}
 
 															@include range-width(0, 451px) {
 																font-size: 18px;
@@ -375,6 +404,10 @@ header {
 															letter-spacing: 1px;
 															color: #4a4a4a;	
 															text-align: left;
+
+															@include range-width(769px, 1025px) {
+																text-align: center;
+															}
 
 															@include range-width(0, 451px) {
 																font-size: 14px;
@@ -511,6 +544,11 @@ header {
 												justify-content: center;
 												position: relative;
 												padding: 0 1rem;
+
+												@include range-width(769px, 1025px) {
+													flex-direction: column;
+													justify-content: flex-start;
+												}
 
 												@include range-width(0, 451px) {
 													flex-direction: column;
