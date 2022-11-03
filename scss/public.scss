@@ -315,6 +315,10 @@ header {
 													color: #4a4a4a;
 													text-align: left;
 
+													@include range-width(769px, 1025px) {
+														text-align: justify;
+													}
+
 													@include range-width(451px, 769px) {
 														margin: 1.5rem 0;
 														padding: 0 1.5rem;	
@@ -575,6 +579,10 @@ header {
 															width: 100%;
 															height: 100%;
 
+															@include range-width(769px, 1025px) {
+																height: 120px;
+															}
+
 															@include range-width(0, 451px) {
 																height: 120px;
 															}
@@ -583,7 +591,8 @@ header {
 												}
 												
 												.tb_tips {
-													padding-left: .75rem;
+													// padding-left: .75rem;
+													padding-left: .4rem;
 
 													@include range-width(0, 451px) {
 														padding-left: 0;
@@ -594,6 +603,10 @@ header {
 														font-size: .875rem;
 														letter-spacing: 1px;
 														color: #636363;
+
+														@include range-width(769px, 1025px) {
+															text-align: center;
+														}
 
 														@include range-width(0, 451px) {
 															margin: .5rem 0;
@@ -608,6 +621,10 @@ header {
 														color: #4a4a4a;
 														text-align: left;
 
+														@include range-width(769px, 1025px) {
+															text-align: center;
+														}
+
 														@include range-width(0, 451px) {
 															text-align: center;
 														}
@@ -619,6 +636,10 @@ header {
 														letter-spacing: 1px;
 														color: #4a4a4a;	
 														text-align: left;
+
+														@include range-width(769px, 1025px) {
+															text-align: center;
+														}
 
 														@include range-width(0, 451px) {
 															text-align: center;
