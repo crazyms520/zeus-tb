@@ -76,7 +76,12 @@ $(function() {
 		swipe: false,
 		touchMove: false,
 		infinite: false,
-		// adaptiveHeight: true,
+		responsive: [{
+				breakpoint: 451,
+				settings: {
+					adaptiveHeight: true,
+				}
+		}]
 	});
 	
 	$('#tb-1').click(function(){
