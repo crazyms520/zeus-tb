@@ -285,7 +285,7 @@ header {
 								.tb_result_item {
 									flex-basis: calc(100% / 3);
 									.tb_product {
-
+										
 										.tb_picture {
 											@include range-width(769px, 1025px) {
 												align-self: center;
@@ -332,6 +332,10 @@ header {
 													@include range-width(0, 451px) {
 														font-size: 13px;
 														text-align: justify;
+													}
+
+													.tb_tip_info_title {
+														margin: 0 0 8px 0;
 													}
 												}
 											}
@@ -401,6 +405,11 @@ header {
 															font-size: .75rem;
 															letter-spacing: 1px;
 															color: #636363;
+															text-align: left;
+
+															@include range-width(769px, 1025px) {
+																text-align: center;
+															}
 
 															@include range-width(0, 451px) {
 																font-size: 14px;
@@ -433,17 +442,25 @@ header {
 														}
 			
 														h4 {
+															display: inline-block;
 															font-size: .75rem;
 															font-weight: bold;
 															letter-spacing: 1px;
 															color: #4a4a4a;	
 															text-align: left;
+															opacity: 0;
 
 															@include range-width(769px, 1025px) {
+																display: none;
 																text-align: center;
 															}
 
+															@include range-width(461px, 769px) {
+																display: none;
+															}
+
 															@include range-width(0, 451px) {
+																display: none;
 																font-size: 14px;
 																text-align: center;
 															}	
@@ -478,6 +495,7 @@ header {
 		
 									.tb_picture {
 										flex-basis: 50%;
+										align-self: center;
 
 										@include range-width(0, 451px) {
 											align-self: center;
@@ -505,8 +523,12 @@ header {
 												width: 100%;
 											}
 		
-											&:nth-of-type(2) {
+											&:not(&:nth-of-type(1)) {
 												margin-top: 1rem;
+											}
+
+											&:last-child {
+												margin-bottom: 1rem;
 											}
 											
 											.tb_tip_title {
@@ -537,6 +559,13 @@ header {
 													padding: 0 .5rem;
 													font-size: 13px;
 													text-align: justify;
+												}
+
+												.tb_tip_info_title {
+													display: inline-block;
+													margin: 0 0 10px 0;
+													width: 100%;
+													text-align: left;
 												}
 											}
 										}
@@ -599,6 +628,7 @@ header {
 													}
 
 													.tb_picture {
+														align-self: center;
 														picture {
 															img {
 																@include range-width(1025px, 1441px) {
@@ -618,7 +648,7 @@ header {
 													picture {
 														display: inline-block;
 														height: 100%;
-		
+														
 														img {
 															width: 100%;
 															height: 100%;
@@ -675,12 +705,12 @@ header {
 													}
 		
 													h4 {
+														display: none;
 														font-size: .875rem;
 														font-weight: bold;
 														letter-spacing: 1px;
 														color: #4a4a4a;	
 														text-align: left;
-
 														@include range-width(769px, 1025px) {
 															text-align: center;
 														}
