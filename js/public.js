@@ -8,7 +8,6 @@ $(function() {
 	}
 
 	let products = [];
-	// let productsHeight = [];
 	
 	function resultTemplet (product) {
 		let {title, img1, info1, info2, info3, img2, tip1, tip2, img3, tip3} = product;
@@ -147,6 +146,7 @@ $(function() {
 
 	$('#get').click(function(){
 		$('.tb_box').removeClass('longW');
+		$('.tb_result_content').removeClass('p_3');
     	$('.tb_result_content').empty()
 		$('.tb_items').slick('slickGoTo', 5);		
 	})
